@@ -5,6 +5,15 @@ from typing import List, Tuple
 
 
 def make_pts(N):
+    """
+    Generate N random 2D points in the unit square.
+
+    Args:
+        N (int): Number of points to generate.
+
+    Returns:
+        List[Tuple[float, float]]: List of (x, y) points.
+    """
     X = []
     for i in range(N):
         x_1 = random.random()
@@ -21,6 +30,15 @@ class Graph:
 
 
 def simple(N):
+    """
+    Generate a simple dataset where the label is 1 if x < 0.5, else 0.
+
+    Args:
+        N (int): Number of samples.
+
+    Returns:
+        Graph: Dataset with features and labels.
+    """
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -30,6 +48,15 @@ def simple(N):
 
 
 def diag(N):
+    """
+    Generate a dataset where the label is 1 if x + y < 0.5, else 0.
+
+    Args:
+        N (int): Number of samples.
+
+    Returns:
+        Graph: Dataset with features and labels.
+    """
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -39,6 +66,15 @@ def diag(N):
 
 
 def split(N):
+    """
+    Generate a dataset where the label is 1 if x < 0.2 or x > 0.8, else 0.
+
+    Args:
+        N (int): Number of samples.
+
+    Returns:
+        Graph: Dataset with features and labels.
+    """
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -48,6 +84,15 @@ def split(N):
 
 
 def xor(N):
+    """
+    Generate a dataset where the label is 1 if (x < 0.5 and y > 0.5) or (x > 0.5 and y < 0.5), else 0.
+
+    Args:
+        N (int): Number of samples.
+
+    Returns:
+        Graph: Dataset with features and labels.
+    """
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -57,6 +102,15 @@ def xor(N):
 
 
 def circle(N):
+    """
+    Generate a dataset where the label is 1 if the point is outside a circle of radius sqrt(0.1) centered at (0.5, 0.5), else 0.
+
+    Args:
+        N (int): Number of samples.
+
+    Returns:
+        Graph: Dataset with features and labels.
+    """
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -67,6 +121,15 @@ def circle(N):
 
 
 def spiral(N):
+    """
+    Generate a spiral dataset with two classes in a spiral pattern.
+
+    Args:
+        N (int): Number of samples (should be even).
+
+    Returns:
+        Graph: Dataset with features and labels.
+    """
 
     def x(t):
         return t * math.cos(t) / 20.0
