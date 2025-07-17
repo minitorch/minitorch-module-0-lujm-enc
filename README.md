@@ -10,6 +10,9 @@
 ## Task 0.5 Visualization
 
 Parameter: linear.weight_0_0 -> -10.00
+
 Parameter: linear.weight_1_0 -> 1.56
+
 Parameter: linear.bias_0 -> 3.72
+
 <img src="newplot.png" alt="Task 0.5 Visualization" width="60%">
